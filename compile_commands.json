@@ -1,0 +1,76 @@
+[
+ {
+  "directory": "C:\\John_Wood\\Coding_Projects\\c\\sort_proj",
+  "arguments": [
+   "cc",
+   "-c",
+   "src/sorted_array.c",
+   "-o",
+   "build/sorted_array.o",
+   "-O2",
+   "-Wall",
+   "-Wextra",
+   "-fno-strict-aliasing",
+   "-Iinclude",
+   "-Isrc"
+  ],
+  "file": "src/sorted_array.c"
+ },
+ {
+  "directory": "C:\\John_Wood\\Coding_Projects\\c\\sort_proj",
+  "arguments": [
+   "cc",
+   "-c",
+   "src/vector.c",
+   "-o",
+   "build/vector.o",
+   "-O2",
+   "-Wall",
+   "-Wextra",
+   "-fno-strict-aliasing",
+   "-Iinclude",
+   "-Isrc"
+  ],
+  "file": "src/vector.c"
+ },
+ {
+  "directory": "C:\\John_Wood\\Coding_Projects\\c\\sort_proj",
+  "arguments": [
+   "cc",
+   "-c",
+   "src/skvmap.c",
+   "-o",
+   "build/skvmap.o",
+   "-O2",
+   "-Wall",
+   "-Wextra",
+   "-fno-strict-aliasing",
+   "-Iinclude",
+   "-Isrc"
+  ],
+  "file": "src/skvmap.c"
+ },
+ {
+  "directory": "C:\\John_Wood\\Coding_Projects\\c\\sort_proj",
+  "arguments": [
+   "cc",
+   "tests/tssa.c",
+   "build/sorted_array.o",
+   "build/vector.o",
+   "build/skvmap.o",
+   "-o",
+   "bin/tssa",
+   "-O2",
+   "-Wall",
+   "-Wextra",
+   "-fno-strict-aliasing",
+   "-Iinclude",
+   "-Isrc",
+   "-Llib",
+   "-lgcc_s",
+   "-lgcc",
+   "-lstdc++"
+  ],
+  "file": "tests/tssa.c"
+ }
+]
