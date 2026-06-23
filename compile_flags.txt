@@ -2,3 +2,4 @@
 -Iinclude
 -Isrc
 -Ic:/John_Wood/DevTools/w64devkit/include
+-D_DEBUG

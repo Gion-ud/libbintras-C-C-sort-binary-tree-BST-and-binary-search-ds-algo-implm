@@ -11,6 +11,9 @@
    "-Wall",
    "-Wextra",
    "-fno-strict-aliasing",
+   "-fno-exceptions",
+   "-D_DEBUG",
+   "-g",
    "-Iinclude",
    "-Isrc"
   ],
@@ -28,6 +31,9 @@
    "-Wall",
    "-Wextra",
    "-fno-strict-aliasing",
+   "-fno-exceptions",
+   "-D_DEBUG",
+   "-g",
    "-Iinclude",
    "-Isrc"
   ],
@@ -45,6 +51,9 @@
    "-Wall",
    "-Wextra",
    "-fno-strict-aliasing",
+   "-fno-exceptions",
+   "-D_DEBUG",
+   "-g",
    "-Iinclude",
    "-Isrc"
   ],
@@ -72,5 +81,46 @@
    "-lstdc++"
   ],
   "file": "tests/tssa.c"
+ },
+ {
+  "directory": "C:\\John_Wood\\Coding_Projects\\c\\sort_proj",
+  "arguments": [
+   "cc",
+   "-c",
+   "src/bintras_bst.c",
+   "-o",
+   "build/bintras_bst.o",
+   "-O2",
+   "-Wall",
+   "-Wextra",
+   "-fno-strict-aliasing",
+   "-fno-exceptions",
+   "-D_DEBUG",
+   "-g",
+   "-Iinclude",
+   "-Isrc"
+  ],
+  "file": "src/bintras_bst.c"
+ },
+ {
+  "directory": "C:\\John_Wood\\Coding_Projects\\c\\sort_proj",
+  "arguments": [
+   "cc",
+   "build/bintras_bst.o",
+   "tests/tsbst.c",
+   "build/vector.o",
+   "-o",
+   "bin/tsbst",
+   "-O2",
+   "-Wall",
+   "-Wextra",
+   "-fno-strict-aliasing",
+   "-fno-exceptions",
+   "-D_DEBUG",
+   "-g",
+   "-Iinclude",
+   "-Isrc"
+  ],
+  "file": "tests/tsbst.c"
  }
 ]

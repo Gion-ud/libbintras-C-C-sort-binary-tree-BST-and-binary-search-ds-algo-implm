@@ -5,7 +5,7 @@ all: sorted_array.o vector.o skvmap.o bintras_bst.o tsbst
 # tssa
 
 CFLAGS = \
-	-O2 -Wall -Wextra -fno-strict-aliasing -fno-exceptions #-D_DEBUG -g # -fsanitize=address
+	-O2 -Wall -Wextra -fno-strict-aliasing -fno-exceptions -D_DEBUG -g # -fsanitize=address
 #	-O0
 #	-Wno-maybe-uninitialized \
 #	-Wno-unused-function
@@ -23,7 +23,7 @@ skvmap.o: src/skvmap.c | build
 bintras_bst.o: src/bintras_bst.c | build
 	cc -c $< -o build/$@ $(CFLAGS) $(INCLUDE)
 
-tsbst: build/bintras_bst.o tests/tsbst.c | bin
+tsbst: build/bintras_bst.o tests/tsbst.c build/vector.o | bin
 	cc $^ -o bin/$@ $(CFLAGS) $(INCLUDE)
 	export PATH="$$PATH:$$(pwd)/bin"
 

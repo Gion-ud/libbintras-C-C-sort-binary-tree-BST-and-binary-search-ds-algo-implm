@@ -2,6 +2,7 @@
 // libbintras
 
 #include <stdint.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
 #include <string.h>
@@ -186,39 +187,48 @@ void bintras_destroy_bst(bintras_bst *bst_p) {
 
 const bintras_bst_node *
 bintras_bst_insert(bintras_bst *bst_p, void *data) {
-    _dbg_log_msg("begin");
+    _dbg_log_msg("#0");
     if (!bst_p || !data) return NULL;
-    __auto_type node_p = _bstpool_new_node(&bst_p->node_pool, data);
-    if (!node_p) return NULL;
 
-    ptrdiff_t node_pos = _bstpool_get_node_pos(&bst_p->node_pool, node_p);
-    bst_p->state_arr[node_pos] = BST_NODE_ALIVE;
-
-    if (!bst_p->root_np) {
-        bst_p->root_np = node_p;
-        return node_p;
-    }
-
-    BSTNode *cur_np     = bst_p->root_np;
+    _dbg_log_msg("#1");
     BSTNode *parent_np  = NULL;
 
     // invariant: node.left < node.self < node.right
     // find the parent
-    while (cur_np) {
-        parent_np = cur_np;
-        int cmp_ret = bst_p->cmp_nodes(data, cur_np->data);
-        if (cmp_ret < 0)
-            cur_np = cur_np->left_np;
-        else if (cmp_ret > 0)
-            cur_np = cur_np->right_np;
-        else {
-            _bstpool_free_node(&bst_p->node_pool, node_p);
-            bst_p->state_arr[node_pos] = BST_NODE_EMPTY;
-            return cur_np;
+    _dbg_log_msg("#2 search pos");
+    if (bst_p->root_np) {
+        BSTNode *cur_np = bst_p->root_np;
+        while (cur_np) {
+            parent_np = cur_np;
+            int cmp_ret = bst_p->cmp_nodes(data, cur_np->data);
+            if (cmp_ret < 0)
+                cur_np = cur_np->left_np;
+            else if (cmp_ret > 0)
+                cur_np = cur_np->right_np;
+            else
+                return cur_np;
         }
+        assert(!cur_np);
+        assert(parent_np);
+    }
+
+    _dbg_log_msg("#3 new BSTNode()");
+    __auto_type node_p = _bstpool_new_node(&bst_p->node_pool, data);
+    if (!node_p) return NULL;
+
+    _dbg_log_msg("#4 _bstpool_get_node_pos");
+    ptrdiff_t node_pos = _bstpool_get_node_pos(&bst_p->node_pool, node_p);
+    bst_p->state_arr[node_pos] = BST_NODE_ALIVE;
+
+    _dbg_log_msg("#5 check if !root");
+    if (!bst_p->root_np) {
+        bst_p->root_np = node_p;
+        _dbg_log_msg("0.ret@no_root\n");
+        return node_p;
     }
 
     // insert the node into parent.left or parent.right
+    _dbg_log_msg("#6 insert into parent.left or parent.right");
     int cmp_ret = bst_p->cmp_nodes(data, parent_np->data);
     if (cmp_ret < 0) {
         parent_np->left_np  = node_p;
@@ -226,15 +236,16 @@ bintras_bst_insert(bintras_bst *bst_p, void *data) {
         parent_np->right_np = node_p;
     }
 
+    _dbg_log_msg("#7 link node.parent");
     node_p->parent_np = parent_np;
-    _dbg_log_msg("end");
+    _dbg_log_msg("0.ret\n");
     return node_p;
 }
 
 const bintras_bst_node *
 bintras_bst_search(bintras_bst *bst_p, void *data) {
     _dbg_log_msg("begin");
-    if (!bst_p || !data) return NULL;
+    if (!bst_p || !data) goto failed_ret;
     BSTNode *cur_np     = bst_p->root_np;
     BSTNode *parent_np  = NULL;
 
@@ -246,54 +257,56 @@ bintras_bst_search(bintras_bst *bst_p, void *data) {
         else if (cmp_ret > 0)
             cur_np = cur_np->right_np;
         else
-            return parent_np;
+            break;
     }
 
+    return parent_np;
+failed_ret:
     _dbg_log_msg("end.failed");
     return NULL;
 }
 
-int bintras_bst_mark_dead(bintras_bst *bst_p, void *data) {
-    if (!bst_p || !data) return -1;
-    BSTNode *target_np = (BSTNode*)bintras_bst_search(bst_p, data);
-    if (!target_np) return -1;
-    __auto_type pos = _bstpool_get_node_pos(&bst_p->node_pool, target_np);
+int bintras_bst_mark_dead(bintras_bst *bst_p, bintras_bst_node *node_p) {
+    if (!bst_p || !node_p) return -1;
+    __auto_type pos = _bstpool_get_node_pos(&bst_p->node_pool, node_p);
     if (pos < 0) return -1;
     bst_p->state_arr[pos] = BST_NODE_DEAD;
+    ++bst_p->dead_count;
     return 0;
 }
 
-static const bintras_bst_node *
+int bintras_bst_node_is_valid(bintras_bst *bst_p, const bintras_bst_node *node_p) {
+    if (!bst_p || !node_p) return 0;
+    __auto_type pos = _bstpool_get_node_pos(&bst_p->node_pool, (BSTNode*)node_p);
+    return (bst_p->state_arr[pos] == BST_NODE_ALIVE);
+}
+
+static bintras_bst_node *
 _bintras_bst_leftmost(bintras_bst *bst_p) {
-    _dbg_log_msg("begin");
     if (!bst_p) return NULL;
     BSTNode *cur_np = bst_p->root_np;
     while (cur_np->left_np) {
         cur_np = cur_np->left_np;
     }
-    _dbg_log_msg("end");
     return cur_np;
 }
 
-static const bintras_bst_node *
+static bintras_bst_node *
 _bintras_bst_rightmost(bintras_bst *bst_p) {
-    _dbg_log_msg("begin");
     if (!bst_p) return NULL;
     BSTNode *cur_np = bst_p->root_np;
     while (cur_np->right_np) {
         cur_np = cur_np->right_np;
     }
-    _dbg_log_msg("end");
     return cur_np;
 }
 
 
-static const bintras_bst_node *
+static bintras_bst_node *
 _bintras_bst_next_node(
     bintras_bst        *bst_p,
     bintras_bst_node   *node_p
 ) {
-    _dbg_log_msg("begin");
     if (!bst_p || !node_p) return NULL;
     BSTNode *cur_np = node_p;
 
@@ -317,16 +330,14 @@ _bintras_bst_next_node(
     }
     cur_np = cur_np->parent_np;
 
-    _dbg_log_msg("end");
     return cur_np;
 }
 
-static const bintras_bst_node *
+static bintras_bst_node *
 _bintras_bst_prev_node(
     bintras_bst        *bst_p,
     bintras_bst_node   *node_p
 ) {
-    _dbg_log_msg("begin");
     if (!bst_p || !node_p) return NULL;
     BSTNode *cur_np = node_p;
 
@@ -350,7 +361,6 @@ _bintras_bst_prev_node(
     }
     cur_np = cur_np->parent_np;
 
-    _dbg_log_msg("end");
     return cur_np;
 }
 
@@ -373,4 +383,125 @@ const bintras_bst_node *bintras_min_node(bintras_bst *bst_p) {
 }
 const bintras_bst_node *bintras_max_node(bintras_bst *bst_p) {
     return _bintras_bst_rightmost(bst_p);
+}
+
+static bintras_bst_node *
+_bintras_build_bst_from_nodearr_recursive(
+    bintras_bst        *bst_p,
+    bintras_bst_node  **node_ptr_arr_begin,
+    bintras_bst_node  **node_ptr_arr_end,
+    bintras_bst_node   *parent_np
+) {
+    _dbg_log_msg("_bintras_build_bst_from_nodearr");
+    assert(bst_p);
+    if (node_ptr_arr_begin >= node_ptr_arr_end) return NULL;
+
+    _dbg_print("gap: %td\n", node_ptr_arr_end - node_ptr_arr_begin);
+    __auto_type node_ptr_arr_pivot = node_ptr_arr_begin +
+        (node_ptr_arr_end - node_ptr_arr_begin) / 2;
+
+    bintras_bst_node *root_np = *node_ptr_arr_pivot;
+    root_np->parent_np = parent_np;
+    root_np->left_np =
+        _bintras_build_bst_from_nodearr_recursive(
+            bst_p,
+            node_ptr_arr_begin,
+            node_ptr_arr_pivot,
+            root_np
+        );
+    root_np->right_np =
+        _bintras_build_bst_from_nodearr_recursive(
+            bst_p,
+            node_ptr_arr_pivot + 1,
+            node_ptr_arr_end,
+            root_np
+        );
+    
+    return root_np;
+}
+
+
+int bintras_bst_rebuild(bintras_bst *bst_p) {
+    _dbg_log_msg("#0");
+    if (!bst_p) return -1;
+
+    _dbg_log_msg("#1 BSTNode **live_np_arr = new BSTNode*[node_pool.count];");
+    size_t node_dead_cnt = bst_p->dead_count;
+    size_t node_live_cnt = bst_p->node_pool.count - node_dead_cnt;
+    __auto_type live_np_arr =
+        (BSTNode **)malloc(bst_p->node_pool.count * sizeof(BSTNode *));
+    if (!live_np_arr) goto failed_ret;
+
+    _dbg_log_msg("#2 dead_np_arr");
+    __auto_type dead_np_arr = live_np_arr + node_live_cnt;
+    size_t live_np_arr_pos = 0;
+    size_t dead_np_arr_pos = 0;
+
+    _dbg_log_msg("#3 loop");
+    size_t __ctr = 0ul;
+    for (
+    __auto_type
+        it = _bintras_bst_leftmost(bst_p);
+        it != NULL;
+        it = _bintras_bst_next_node(bst_p, it)
+    ) {
+        _dbg_print("it: %zu", __ctr++);
+        ptrdiff_t nidx = _bstpool_get_node_pos(&bst_p->node_pool, it);
+        if (bst_p->state_arr[nidx] == BST_NODE_DEAD) {
+            _dbg_print("is_dead: %zu", dead_np_arr_pos);
+            dead_np_arr[dead_np_arr_pos++] = it;
+            continue;
+        }
+        _dbg_print("is_alive: %zu", live_np_arr_pos);
+        assert(bst_p->state_arr[nidx] == BST_NODE_ALIVE);
+        live_np_arr[live_np_arr_pos++] = it;
+    }
+    _dbg_print("og_deadc: %zu; og_livec: %zu;", node_dead_cnt, node_live_cnt);
+    _dbg_print("deadc: %zu; livec: %zu;", dead_np_arr_pos, live_np_arr_pos);
+    assert(live_np_arr_pos == node_live_cnt);
+    assert(dead_np_arr_pos == node_dead_cnt);
+
+    for (size_t i = 0ul; i < node_live_cnt; ++i) {
+        __auto_type nidx = _bstpool_get_node_pos(&bst_p->node_pool, live_np_arr[i]);
+        assert(bst_p->state_arr[nidx] == BST_NODE_ALIVE);
+    }
+
+    _dbg_log_msg("#4 delete[] dead_np_arr;");
+    for (size_t i = 0ul; i < node_dead_cnt; ++i) {
+        __auto_type nidx = _bstpool_get_node_pos(&bst_p->node_pool, dead_np_arr[i]);
+        assert(bst_p->state_arr[nidx] == BST_NODE_DEAD);
+        bst_p->state_arr[nidx] = BST_NODE_EMPTY;
+        int rc = _bstpool_free_node(&bst_p->node_pool, dead_np_arr[i]);
+        assert(rc != -1);
+    }
+    assert(bst_p->node_pool.count == node_live_cnt);
+    dead_np_arr_pos     = 0;
+    node_dead_cnt       = 0;
+    bst_p->dead_count   = 0;
+
+    _dbg_log_msg("#5 destroy node links");
+    for (size_t i = 0ul; i < node_live_cnt; ++i) {
+        live_np_arr[i]->parent_np   = NULL;
+        live_np_arr[i]->left_np     = NULL;
+        live_np_arr[i]->right_np    = NULL;
+    }
+    dead_np_arr_pos = 0;
+    assert(bst_p->node_pool.count == node_live_cnt);
+
+    _dbg_log_msg("#6 rebuild bst recursive");
+    BSTNode *root_np =
+        _bintras_build_bst_from_nodearr_recursive(
+            bst_p,
+            live_np_arr,
+            live_np_arr + live_np_arr_pos,
+            NULL
+        );
+    assert(root_np);
+    bst_p->root_np = root_np;
+
+    _dbg_log_msg("0.ret\n");
+    return 0;
+failed_ret:
+    _dbg_log_msg("-1.ret\n");
+    return -1;
 }

@@ -1,5 +1,7 @@
 #include <assert.h>
 #include <bintras_bst.h>
+#include <stdio.h>
+#include <vector.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -45,12 +47,17 @@ int main() {
     assert(bst_p);
     size_t kvc = get_array_type_length(kvtbl);
 
+    Vector(bintras_bst_node*) v = vector_create(bintras_bst_node*);
+
     puts("1. insert all kv");
     for (__auto_type i = 0ul; i < kvc; ++i) {
         __auto_type rc = bintras_bst_insert(bst_p, &kvtbl[i]);
         assert(rc);
     }
     puts("");
+
+    puts("7. rebuild");
+    bintras_bst_rebuild(bst_p);
 
     puts("2. get all kv");
     for (
@@ -65,7 +72,7 @@ int main() {
     }
     puts("");
 
-    puts("2.a get all kv desc");
+    puts("3. get all kv desc");
     for (
     __auto_type
         it = bintras_max_node(bst_p);
@@ -78,14 +85,55 @@ int main() {
     }
     puts("");
 
-    puts("3. search all kv");
+    puts("4. search all kv");
     for (__auto_type i = 0ul; i < kvc; ++i) {
-        __auto_type np = bintras_bst_search(bst_p, &kvtbl[i]);
+        __auto_type np = (bintras_bst_node*)bintras_bst_search(bst_p, &kvtbl[i]);
         assert(np);
+        vector_push_back(&v, &np);
         cstr_kv_t *ent_p = (cstr_kv_t*)np->data;
         printf("%s -> %s\n", ent_p->key, ent_p->value);
     }
     puts("");
+
+    size_t del_idx_arr[] = { 0, 1, 2, 3, 5, 7 };
+    __auto_type del_idx_arr_len = get_array_type_length(del_idx_arr);
+    puts("5. del some entries");
+    for (__auto_type i = 0ul; i < del_idx_arr_len; ++i) {
+        bintras_bst_mark_dead(bst_p, v[del_idx_arr[i]]);
+    }
+    puts("");
+    vector_destroy(v);
+    assert(((_bintras_bst_implm*)bst_p)->dead_count == del_idx_arr_len);
+
+    puts("6. search all kv");
+    for (__auto_type i = 0ul; i < kvc; ++i) {
+        __auto_type np = bintras_bst_search(bst_p, &kvtbl[i]);
+        assert(np);
+        printf("ENTRY_STATE: %hd\n", ((_bintras_bst_implm*)bst_p)->state_arr[i]);
+        if (!bintras_bst_node_is_valid(bst_p, np)) {
+            //puts("this entry is DEADBEEF");
+        }
+        cstr_kv_t *ent_p = (cstr_kv_t*)np->data;
+        printf("%s -> %s\n", ent_p->key, ent_p->value);
+    }
+    puts("");
+
+    puts("7. rebuild");
+    bintras_bst_rebuild(bst_p);
+
+    puts("8. get all kv asc");
+    for (
+    __auto_type
+        it = bintras_min_node(bst_p);
+        it != NULL;
+        it = bintras_bst_next_node(bst_p, it)
+    ) {
+        assert(it);
+        cstr_kv_t *ent_p = (cstr_kv_t*)it->data;
+        printf("%s -> %s\n", ent_p->key, ent_p->value);
+    }
+    puts("");
+
 
 
     puts("delete bst_p;");
