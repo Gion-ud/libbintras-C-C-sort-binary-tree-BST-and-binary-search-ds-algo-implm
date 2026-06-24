@@ -179,26 +179,6 @@ void bintras_destroy_bst(bintras_bst *bst_p) {
     _dbg_log_msg("end");
 }
 
-// pointer issue
-// when a node is not yet allocated
-// the first 8 bytes (void *BSTNode::data) of the nodes store
-// the ptr to the next node in the pool alloc
-// instead of data;
-// sizeof(_BSTNodeFreeChunk) == sizeof(BSTNode *_BSTNodeFreeChunk::next_free_np)
-//  == 8 == sizeof(void *BSTNode::data)
-// This means when a BSTNode is accessed when its still unallocated
-// (usually this is a bug)
-// void *BSTNode::data is actually the allocator medatata
-// (_BSTNodeFreeChunk, and BSTNode *_BSTNodeFreeChunk::next_free_np).
-// Assessing BSTNode::data would either break the comparitor (eg: resulting in segfault)
-// or causing pool allocator curruption (which is horrible)
-// So an easy fix is to check the BST::state_arr at idx of the node in the pool
-// to see if the state is BST_NODE_EMPTY
-// (which means the node is either freed or has never been allocated)
-// and if so skip it or do whatever
-// and this MUST be done before comparison or any modification
-// A more reliable solution is to separate free list metadata from node array
-// but it implies allocation of a dedicated free list and rewriting part of node pool
 
 static const bintras_bst_node *
 _bintras_bst_find_insert_pos(bintras_bst *bst_p, void *data) {
@@ -250,26 +230,9 @@ bintras_bst_insert(bintras_bst *bst_p, void *data) {
     if (!bst_p || !data) return NULL;
 
     _dbg_log_msg("#1");
-    BSTNode *parent_np  = NULL;
-
-    // invariant: node.left < node.self < node.right
-    // find the parent
-    _dbg_log_msg("#2 search pos");
-    if (bst_p->root_np) {
-        BSTNode *cur_np = bst_p->root_np;
-        while (cur_np) {
-            parent_np = cur_np;
-            int cmp_ret = bst_p->cmp_nodes(data, cur_np->data);
-            if (cmp_ret < 0)
-                cur_np = cur_np->left_np;
-            else if (cmp_ret > 0)
-                cur_np = cur_np->right_np;
-            else
-                return cur_np;
-        }
-        assert(!cur_np);
-        assert(parent_np);
-    }
+    BSTNode *parent_np = (BSTNode*)_bintras_bst_find_insert_pos(bst_p, data);
+    int cmp_ret = bst_p->cmp_nodes(data, parent_np->data);
+    if (cmp_ret == 0) return parent_np;
 
     _dbg_log_msg("#3 new BSTNode()");
     __auto_type node_p = _bstpool_new_node(&bst_p->node_pool, data);
@@ -288,7 +251,6 @@ bintras_bst_insert(bintras_bst *bst_p, void *data) {
 
     // insert the node into parent.left or parent.right
     _dbg_log_msg("#6 insert into parent.left or parent.right");
-    int cmp_ret = bst_p->cmp_nodes(data, parent_np->data);
     if (cmp_ret < 0) {
         parent_np->left_np  = node_p;
     } else {

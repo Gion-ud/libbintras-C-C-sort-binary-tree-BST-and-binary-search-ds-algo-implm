@@ -33,7 +33,8 @@ bintras_bst_prev_node(
 );
 extern const bintras_bst_node *bintras_min_node(bintras_bst *bst_p);
 extern const bintras_bst_node *bintras_max_node(bintras_bst *bst_p);
-
+extern const bintras_bst_node *bintras_bst_lower_bound(bintras_bst *bst_p, void *data);
+extern const bintras_bst_node *bintras_bst_upper_bound(bintras_bst *bst_p, void *data);
 extern int bintras_bst_rebuild(bintras_bst *bst_p);
 
 // debug build
