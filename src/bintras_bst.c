@@ -209,6 +209,7 @@ _bintras_bst_find_insert_pos(bintras_bst *bst_p, void *data) {
 
     while (cur_np) {
         __auto_type nidx = _bstpool_get_node_pos(&bst_p->node_pool, cur_np);
+        assert(bst_p->state_arr[nidx] == BST_NODE_EMPTY);
         if (bst_p->state_arr[nidx] == BST_NODE_EMPTY) break;
         _dbg_print(
             "(self,parent,left,right)=(%td,%td,%td,%td)",
