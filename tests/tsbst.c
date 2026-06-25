@@ -59,15 +59,37 @@ int main() {
     }
     puts("");
 
+    __auto_type it_begin = bintras_bst_iterator_begin(bst_p);
+    __auto_type it_end = bintras_bst_iterator_end(bst_p);
+    assert(it_begin != it_end);
     puts("7. rebuild");
-    bintras_bst_rebuild(bst_p);
+    //bintras_bst_rebuild(bst_p);
 
     puts("2. get all kv");
+    it_begin = bintras_bst_iterator_begin(bst_p);
+    it_end = bintras_bst_iterator_end(bst_p);
     for (
     __auto_type
-        it = bintras_min_node(bst_p);
-        it != NULL;
+        it = it_begin;
+        it != it_end;
         it = bintras_bst_next_node(bst_p, it)
+    ) {
+        assert(it);
+        cstr_kv_t *ent_p = (cstr_kv_t*)it->data;
+        printf("%s -> %s\n", ent_p->key, ent_p->value);
+    }
+    puts("");
+
+    puts("3. get all kv desc");
+    it_begin = bintras_bst_iterator_begin(bst_p);
+    it_end = bintras_bst_iterator_end(bst_p);
+    __auto_type it_rbegin = bintras_bst_iterator_rbegin(bst_p);
+    __auto_type it_rend = bintras_bst_iterator_rend(bst_p);
+    for (
+    __auto_type
+        it = it_rbegin;
+        it != it_rend;
+        it = bintras_bst_prev_node(bst_p, it)
     ) {
         assert(it);
         cstr_kv_t *ent_p = (cstr_kv_t*)it->data;
@@ -87,19 +109,6 @@ int main() {
     cstr = "ftruncate_";
     __np = (bintras_bst_node*)bintras_bst_search(bst_p, &cstr);
     assert(!__np);
-
-    puts("3. get all kv desc");
-    for (
-    __auto_type
-        it = bintras_max_node(bst_p);
-        it != NULL;
-        it = bintras_bst_prev_node(bst_p, it)
-    ) {
-        assert(it);
-        cstr_kv_t *ent_p = (cstr_kv_t*)it->data;
-        printf("%s -> %s\n", ent_p->key, ent_p->value);
-    }
-    puts("");
 
     puts("4. search all kv");
     for (__auto_type i = 0ul; i < kvc; ++i) {
@@ -125,9 +134,9 @@ int main() {
     for (__auto_type i = 0ul; i < kvc; ++i) {
         __auto_type np = bintras_bst_search(bst_p, &kvtbl[i]);
         assert(np);
-        printf("ENTRY_STATE: %hd\n", ((_bintras_bst_implm*)bst_p)->state_arr[i]);
+        //printf("ENTRY_STATE: %hd\n", ((_bintras_bst_implm*)bst_p)->state_arr[i]);
         if (!bintras_bst_node_is_valid(bst_p, np)) {
-            //puts("this entry is DEADBEEF");
+            puts("this entry is DEADBEEF");
         }
         cstr_kv_t *ent_p = (cstr_kv_t*)np->data;
         printf("%s -> %s\n", ent_p->key, ent_p->value);
@@ -135,13 +144,32 @@ int main() {
     puts("");
 
     puts("7. rebuild");
+    puts("");
     bintras_bst_rebuild(bst_p);
-
-    puts("8. get all kv asc");
+    it_begin = bintras_bst_iterator_begin(bst_p);
+    it_end = bintras_bst_iterator_end(bst_p);
     for (
     __auto_type
-        it = bintras_min_node(bst_p);
-        it != NULL;
+        it = it_begin;
+        it != it_end;
+        it = bintras_bst_next_node(bst_p, it)
+    ) {
+        //printf("ENTRY_STATE: %hd\n", ((_bintras_bst_implm*)bst_p)->state_arr[i]);
+        if (!bintras_bst_node_is_valid(bst_p, it)) {
+            puts("this entry is DEADBEEF");
+        }
+        cstr_kv_t *ent_p = (cstr_kv_t*)it->data;
+        printf("%s -> %s\n", ent_p->key, ent_p->value);
+    }
+    puts("");
+
+    puts("8. get all kv asc");
+    it_begin = bintras_bst_iterator_begin(bst_p);
+    it_end = bintras_bst_iterator_end(bst_p);
+    for (
+    __auto_type
+        it = it_begin;
+        it != it_end;
         it = bintras_bst_next_node(bst_p, it)
     ) {
         assert(it);
@@ -161,10 +189,12 @@ int main() {
 
 
     puts("10. get all kv");
+    it_begin = bintras_bst_iterator_begin(bst_p);
+    it_end = bintras_bst_iterator_end(bst_p);
     for (
     __auto_type
-        it = bintras_min_node(bst_p);
-        it != NULL;
+        it = it_begin;
+        it != it_end;
         it = bintras_bst_next_node(bst_p, it)
     ) {
         assert(it);
@@ -190,7 +220,7 @@ int main() {
     for (
     __auto_type
         it = bintras_bst_lower_bound(bst_p, &cstr);
-        it != NULL;
+        it != bintras_bst_iterator_end(bst_p);
         it = bintras_bst_next_node(bst_p, it)
     ) {
         assert(it);
@@ -209,6 +239,22 @@ int main() {
         it = bintras_bst_next_node(bst_p, it)
     ) {
         assert(it);
+        cstr_kv_t *ent_p = (cstr_kv_t*)it->data;
+        printf("%s -> %s\n", ent_p->key, ent_p->value);
+    }
+    puts("");
+
+    bintras_bst_rebuild(bst_p);
+    puts("8. test_new_iter");
+    it_begin = bintras_bst_iterator_begin(bst_p);
+    it_end = bintras_bst_iterator_end(bst_p);
+    for (
+        __auto_type it = it_begin; it != it_end; it = bintras_bst_next_node(bst_p, it)
+    ) {
+        //printf("ENTRY_STATE: %hd\n", ((_bintras_bst_implm*)bst_p)->state_arr[i]);
+        if (!bintras_bst_node_is_valid(bst_p, it)) {
+            puts("this entry is DEADBEEF");
+        }
         cstr_kv_t *ent_p = (cstr_kv_t*)it->data;
         printf("%s -> %s\n", ent_p->key, ent_p->value);
     }

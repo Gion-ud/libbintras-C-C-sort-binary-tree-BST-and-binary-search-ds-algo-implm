@@ -179,17 +179,42 @@ void bintras_destroy_bst(bintras_bst *bst_p) {
     _dbg_log_msg("end");
 }
 
+// pointer issue
+// when a node is not yet allocated
+// the first 8 bytes (void *BSTNode::data) of the nodes store
+// the ptr to the next node in the pool alloc
+// instead of data;
+// sizeof(_BSTNodeFreeChunk) == sizeof(BSTNode *_BSTNodeFreeChunk::next_free_np)
+//  == 8 == sizeof(void *BSTNode::data)
+// This means when a BSTNode is accessed when its still unallocated
+// (usually this is a bug)
+// void *BSTNode::data is actually the allocator medatata
+// (_BSTNodeFreeChunk, and BSTNode *_BSTNodeFreeChunk::next_free_np).
+// Assessing BSTNode::data would either break the comparitor (eg: resulting in segfault)
+// or causing pool allocator curruption (which is horrible)
+// So an easy fix is to check the BST::state_arr at idx of the node in the pool
+// to see if the state is BST_NODE_EMPTY
+// (which means the node is either freed or has never been allocated)
+// and if so skip it or do whatever
+// and this MUST be done before comparison or any modification
+// A more reliable solution is to separate free list metadata from node array
+// but it implies allocation of a dedicated free list and rewriting part of node pool
 
 static const bintras_bst_node *
-_bintras_bst_find_insert_pos(bintras_bst *bst_p, void *data) {
+_bintras_bst_find_insert_pos(
+    bintras_bst    *bst_p,
+    void           *data,
+    int            *out_target_exists_p
+) {
     _dbg_log_msg("#0");
-    if (!bst_p || !data) goto failed_ret;
+    if (!bst_p || !data || !out_target_exists_p) goto failed_ret;
     BSTNode *cur_np     = bst_p->root_np;
     BSTNode *parent_np  = NULL;
 
+    *out_target_exists_p = 0; // 0 == false
     while (cur_np) {
         __auto_type nidx = _bstpool_get_node_pos(&bst_p->node_pool, cur_np);
-        if (bst_p->state_arr[nidx] == BST_NODE_EMPTY) break;
+        assert(bst_p->state_arr[nidx] != BST_NODE_EMPTY);
         _dbg_print(
             "(self,parent,left,right)=(%td,%td,%td,%td)",
             nidx,
@@ -203,7 +228,10 @@ _bintras_bst_find_insert_pos(bintras_bst *bst_p, void *data) {
             cur_np = cur_np->left_np;
         else if (cmp_ret > 0)
             cur_np = cur_np->right_np;
-        else break;
+        else {
+            *out_target_exists_p = 1; // i == true
+            break;
+        };
     }
     _dbg_log_msg("0.ret found\n");
     return parent_np;
@@ -216,9 +244,9 @@ const bintras_bst_node *
 bintras_bst_search(bintras_bst *bst_p, void *data) {
     _dbg_log_msg("#0");
     if (!bst_p || !data) goto failed_ret;
-    __auto_type np = _bintras_bst_find_insert_pos(bst_p, data);
-    return (bst_p->cmp_nodes(data, np->data) == 0)
-        ? np : NULL;
+    int target_exists = 0;
+    __auto_type np = _bintras_bst_find_insert_pos(bst_p, data, &target_exists);
+    return (target_exists) ? np : NULL;
 failed_ret:
     _dbg_log_msg("-1.ret\n");
     return NULL;
@@ -230,9 +258,31 @@ bintras_bst_insert(bintras_bst *bst_p, void *data) {
     if (!bst_p || !data) return NULL;
 
     _dbg_log_msg("#1");
-    BSTNode *parent_np = (BSTNode*)_bintras_bst_find_insert_pos(bst_p, data);
-    int cmp_ret = bst_p->cmp_nodes(data, parent_np->data);
-    if (cmp_ret == 0) return parent_np;
+    BSTNode *parent_np  = NULL;
+
+    // invariant: node.left < node.self < node.right
+    // find the parent
+    _dbg_log_msg("#2 search pos");
+/*
+    if (bst_p->root_np) {
+        BSTNode *cur_np = bst_p->root_np;
+        while (cur_np) {
+            parent_np = cur_np;
+            int cmp_ret = bst_p->cmp_nodes(data, cur_np->data);
+            if (cmp_ret < 0)
+                cur_np = cur_np->left_np;
+            else if (cmp_ret > 0)
+                cur_np = cur_np->right_np;
+            else
+                return cur_np;
+        }
+        assert(!cur_np);
+        assert(parent_np);
+    }
+*/
+    int target_exists = 0;
+    parent_np = (BSTNode*)_bintras_bst_find_insert_pos(bst_p, data, &target_exists);
+    if (target_exists) return parent_np;
 
     _dbg_log_msg("#3 new BSTNode()");
     __auto_type node_p = _bstpool_new_node(&bst_p->node_pool, data);
@@ -251,6 +301,7 @@ bintras_bst_insert(bintras_bst *bst_p, void *data) {
 
     // insert the node into parent.left or parent.right
     _dbg_log_msg("#6 insert into parent.left or parent.right");
+    int cmp_ret = bst_p->cmp_nodes(data, parent_np->data);
     if (cmp_ret < 0) {
         parent_np->left_np  = node_p;
     } else {
@@ -262,8 +313,6 @@ bintras_bst_insert(bintras_bst *bst_p, void *data) {
     _dbg_log_msg("0.ret\n");
     return node_p;
 }
-
-
 
 int bintras_bst_mark_dead(bintras_bst *bst_p, bintras_bst_node *node_p) {
     if (!bst_p || !node_p) return -1;
@@ -299,7 +348,6 @@ _bintras_bst_rightmost(bintras_bst *bst_p) {
     }
     return cur_np;
 }
-
 
 static bintras_bst_node *
 _bintras_bst_next_node(
@@ -419,10 +467,24 @@ _bintras_build_bst_from_nodearr_recursive(
     return root_np;
 }
 
-
 int bintras_bst_rebuild(bintras_bst *bst_p) {
     _dbg_log_msg("#0");
     if (!bst_p) return -1;
+
+    if (!bst_p->dead_count) {
+        _dbg_print("nodec %zu", bst_p->node_pool.count);
+        size_t __ctr = 0ul;
+        for (
+        __auto_type
+            it = _bintras_bst_leftmost(bst_p);
+            it != NULL;
+            it = _bintras_bst_next_node(bst_p, it)
+        ) {
+            _dbg_print("it: %zu", __ctr++);
+            ptrdiff_t nidx = _bstpool_get_node_pos(&bst_p->node_pool, it);
+            assert(bst_p->state_arr[nidx] == BST_NODE_ALIVE);
+        }
+    }
 
     _dbg_log_msg("#1 BSTNode **live_np_arr = new BSTNode*[node_pool.count];");
     size_t node_dead_cnt = bst_p->dead_count;
@@ -455,6 +517,7 @@ int bintras_bst_rebuild(bintras_bst *bst_p) {
         assert(bst_p->state_arr[nidx] == BST_NODE_ALIVE);
         live_np_arr[live_np_arr_pos++] = it;
     }
+
     _dbg_print("og_deadc: %zu; og_livec: %zu;", node_dead_cnt, node_live_cnt);
     _dbg_print("deadc: %zu; livec: %zu;", dead_np_arr_pos, live_np_arr_pos);
     assert(live_np_arr_pos == node_live_cnt);
@@ -474,6 +537,7 @@ int bintras_bst_rebuild(bintras_bst *bst_p) {
         assert(rc != -1);
     }
     assert(bst_p->node_pool.count == node_live_cnt);
+
     dead_np_arr_pos     = 0;
     node_dead_cnt       = 0;
     bst_p->dead_count   = 0;
@@ -508,7 +572,8 @@ failed_ret:
 const bintras_bst_node *
 bintras_bst_lower_bound(bintras_bst *bst_p, void *data) {
     if (!bst_p || !data) goto failed_ret;
-    __auto_type np = (BSTNode*)_bintras_bst_find_insert_pos(bst_p, data);
+    int target_exists = 0;
+    __auto_type np = (BSTNode*)_bintras_bst_find_insert_pos(bst_p, data, &target_exists);
     if (!np) goto failed_ret;
     return
         (bst_p->cmp_nodes(data, np->data) > 0)
@@ -522,7 +587,8 @@ failed_ret:
 const bintras_bst_node *
 bintras_bst_upper_bound(bintras_bst *bst_p, void *data) {
     if (!bst_p || !data) goto failed_ret;
-    __auto_type np = (BSTNode*)_bintras_bst_find_insert_pos(bst_p, data);
+    int target_exists = 0;
+    __auto_type np = (BSTNode*)_bintras_bst_find_insert_pos(bst_p, data, &target_exists);
     if (!np) goto failed_ret;
     return
         (bst_p->cmp_nodes(data, np->data) <= 0)

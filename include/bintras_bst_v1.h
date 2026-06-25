@@ -31,14 +31,8 @@ bintras_bst_prev_node(
     const bintras_bst      *bst_p,
     const bintras_bst_node *node_p
 );
-extern const bintras_bst_node *bintras_bst_iterator_begin(bintras_bst *bst_p);
-extern const bintras_bst_node *bintras_bst_iterator_end(bintras_bst *bst_p);
-extern const bintras_bst_node *bintras_bst_iterator_rbegin(bintras_bst *bst_p);
-extern const bintras_bst_node *bintras_bst_iterator_rend(bintras_bst *bst_p);
-
-#define bintras_min_node(bst_p) bintras_bst_iterator_begin(bst_p)
-#define bintras_max_node(bst_p) bintras_bst_iterator_rbegin(bst_p)
-
+extern const bintras_bst_node *bintras_min_node(bintras_bst *bst_p);
+extern const bintras_bst_node *bintras_max_node(bintras_bst *bst_p);
 extern const bintras_bst_node *bintras_bst_lower_bound(bintras_bst *bst_p, void *data);
 extern const bintras_bst_node *bintras_bst_upper_bound(bintras_bst *bst_p, void *data);
 extern int bintras_bst_rebuild(bintras_bst *bst_p);

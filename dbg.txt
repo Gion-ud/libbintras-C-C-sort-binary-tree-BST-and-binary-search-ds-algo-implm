@@ -1,495 +1,488 @@
-<bintras_create_bst@file 'src/bintras_bst.c' line148> begin
-<_bstpool_init@file 'src/bintras_bst.c' line44> begin
-<_bstpool_init@file 'src/bintras_bst.c' line64> end
-<bintras_create_bst@file 'src/bintras_bst.c' line165> end
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line265> 0.ret@no_root
+<bintras_create_bst@file 'src/bintras_bst.c' line155> begin
+<_bstpool_init@file 'src/bintras_bst.c' line51> begin
+<_bstpool_init@file 'src/bintras_bst.c' line72> end
+<bintras_create_bst@file 'src/bintras_bst.c' line176> end
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line314> 0.ret@no_root
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(2,0,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,-1,4)
+(self,parent,left,right)=(4,1,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,-1,4)
+(self,parent,left,right)=(4,1,-1,5)
+(self,parent,left,right)=(5,4,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,-1,4)
+(self,parent,left,right)=(4,1,-1,5)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line442> #0
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line445> #1 BSTNode **live_np_arr = new BSTNode*[node_pool.count];
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line452> #2 dead_np_arr
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line457> #3 loop
-it: 0
-is_alive: 0
-it: 1
-is_alive: 1
-it: 2
-is_alive: 2
-it: 3
-is_alive: 3
-it: 4
-is_alive: 4
-it: 5
-is_alive: 5
-it: 6
-is_alive: 6
-it: 7
-is_alive: 7
-it: 8
-is_alive: 8
-it: 9
-is_alive: 9
-it: 10
-is_alive: 10
-it: 11
-is_alive: 11
-it: 12
-is_alive: 12
-it: 13
-is_alive: 13
-it: 14
-is_alive: 14
-og_deadc: 0; og_livec: 15;
-deadc: 0; livec: 15;
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line486> #4 delete[] dead_np_arr;
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line499> #5 destroy node links
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line508> #6 rebuild bst recursive
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-gap: 15
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-gap: 7
-
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-gap: 3
-
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-gap: 1
-
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-gap: 1
-
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-gap: 3
-
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-gap: 1
-
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-gap: 1
-
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-gap: 7
-
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-gap: 3
-
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-gap: 1
-
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-gap: 1
-
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-gap: 3
-
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-gap: 1
-
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-gap: 1
-
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line519> 0.ret
-
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(2,5,6,10)
-(self,parent,left,right)=(6,2,9,0)
-(self,parent,left,right)=(9,6,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
-
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(8,5,1,4)
-(self,parent,left,right)=(4,8,7,11)
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,-1,4)
+(self,parent,left,right)=(4,1,7,5)
 (self,parent,left,right)=(7,4,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(2,5,6,10)
-(self,parent,left,right)=(6,2,9,0)
-(self,parent,left,right)=(0,6,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(8,5,1,4)
-(self,parent,left,right)=(1,8,12,14)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,-1,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(5,4,-1,6)
+(self,parent,left,right)=(6,5,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(2,5,6,10)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(2,5,6,10)
-(self,parent,left,right)=(10,2,13,3)
-(self,parent,left,right)=(3,10,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(2,0,-1,3)
+(self,parent,left,right)=(3,2,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(8,5,1,4)
-(self,parent,left,right)=(4,8,7,11)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,-1,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(5,4,-1,6)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(2,5,6,10)
-(self,parent,left,right)=(6,2,9,0)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(8,5,1,4)
-(self,parent,left,right)=(4,8,7,11)
-(self,parent,left,right)=(7,4,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,-1,4)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(8,5,1,4)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(2,5,6,10)
-(self,parent,left,right)=(6,2,9,0)
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(2,0,-1,3)
+(self,parent,left,right)=(3,2,10,-1)
+(self,parent,left,right)=(10,3,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(7,4,8,-1)
+(self,parent,left,right)=(8,7,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
+
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(5,4,11,6)
+(self,parent,left,right)=(6,5,9,-1)
 (self,parent,left,right)=(9,6,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(2,5,6,10)
-(self,parent,left,right)=(10,2,13,3)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(7,4,8,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(8,5,1,4)
-(self,parent,left,right)=(4,8,7,11)
-(self,parent,left,right)=(11,4,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(8,5,1,4)
-(self,parent,left,right)=(1,8,12,14)
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(2,0,-1,3)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(2,0,-1,3)
+(self,parent,left,right)=(3,2,10,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(5,4,11,6)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(5,4,11,6)
+(self,parent,left,right)=(6,5,9,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(7,4,8,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(7,4,8,-1)
+(self,parent,left,right)=(8,7,14,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(5,4,11,6)
+(self,parent,left,right)=(6,5,9,-1)
+(self,parent,left,right)=(9,6,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(2,0,-1,3)
+(self,parent,left,right)=(3,2,10,-1)
+(self,parent,left,right)=(10,3,13,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(5,4,11,6)
+(self,parent,left,right)=(11,5,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
 (self,parent,left,right)=(12,1,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(2,5,6,10)
-(self,parent,left,right)=(10,2,13,3)
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(2,0,-1,3)
+(self,parent,left,right)=(3,2,10,-1)
+(self,parent,left,right)=(10,3,13,-1)
 (self,parent,left,right)=(13,10,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(8,5,1,4)
-(self,parent,left,right)=(1,8,12,14)
-(self,parent,left,right)=(14,1,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(7,4,8,-1)
+(self,parent,left,right)=(8,7,14,-1)
+(self,parent,left,right)=(14,8,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(2,5,6,10)
-(self,parent,left,right)=(6,2,9,0)
-(self,parent,left,right)=(0,6,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(8,5,1,4)
-(self,parent,left,right)=(1,8,12,14)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(2,5,6,10)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(2,0,-1,3)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(2,5,6,10)
-(self,parent,left,right)=(10,2,13,3)
-(self,parent,left,right)=(3,10,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(2,0,-1,3)
+(self,parent,left,right)=(3,2,10,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(8,5,1,4)
-(self,parent,left,right)=(4,8,7,11)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(5,4,11,6)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(2,5,6,10)
-(self,parent,left,right)=(6,2,9,0)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(5,4,11,6)
+(self,parent,left,right)=(6,5,9,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(8,5,1,4)
-(self,parent,left,right)=(4,8,7,11)
-(self,parent,left,right)=(7,4,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(7,4,8,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(8,5,1,4)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(7,4,8,-1)
+(self,parent,left,right)=(8,7,14,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(2,5,6,10)
-(self,parent,left,right)=(6,2,9,0)
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(5,4,11,6)
+(self,parent,left,right)=(6,5,9,-1)
 (self,parent,left,right)=(9,6,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(2,5,6,10)
-(self,parent,left,right)=(10,2,13,3)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(2,0,-1,3)
+(self,parent,left,right)=(3,2,10,-1)
+(self,parent,left,right)=(10,3,13,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(8,5,1,4)
-(self,parent,left,right)=(4,8,7,11)
-(self,parent,left,right)=(11,4,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(5,4,11,6)
+(self,parent,left,right)=(11,5,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(8,5,1,4)
-(self,parent,left,right)=(1,8,12,14)
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
 (self,parent,left,right)=(12,1,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(2,5,6,10)
-(self,parent,left,right)=(10,2,13,3)
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(2,0,-1,3)
+(self,parent,left,right)=(3,2,10,-1)
+(self,parent,left,right)=(10,3,13,-1)
 (self,parent,left,right)=(13,10,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(5,-1,8,2)
-(self,parent,left,right)=(8,5,1,4)
-(self,parent,left,right)=(1,8,12,14)
-(self,parent,left,right)=(14,1,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(0,-1,1,2)
+(self,parent,left,right)=(1,0,12,4)
+(self,parent,left,right)=(4,1,7,5)
+(self,parent,left,right)=(7,4,8,-1)
+(self,parent,left,right)=(8,7,14,-1)
+(self,parent,left,right)=(14,8,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line442> #0
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line445> #1 BSTNode **live_np_arr = new BSTNode*[node_pool.count];
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line452> #2 dead_np_arr
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line457> #3 loop
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line496> #0
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line514> #1 BSTNode **live_np_arr = new BSTNode*[node_pool.count];
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line521> #2 dead_np_arr
+og_deadc: 6; og_livec: 9;
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line527> #3 loop
 it: 0
 is_alive: 0
 it: 1
@@ -522,151 +515,253 @@ it: 14
 is_dead: 5
 og_deadc: 6; og_livec: 9;
 deadc: 6; livec: 9;
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line486> #4 delete[] dead_np_arr;
-<_bstpool_free_node@file 'src/bintras_bst.c' line126> begin
-<_bstpool_free_node@file 'src/bintras_bst.c' line143> end
-<_bstpool_free_node@file 'src/bintras_bst.c' line126> begin
-<_bstpool_free_node@file 'src/bintras_bst.c' line143> end
-<_bstpool_free_node@file 'src/bintras_bst.c' line126> begin
-<_bstpool_free_node@file 'src/bintras_bst.c' line143> end
-<_bstpool_free_node@file 'src/bintras_bst.c' line126> begin
-<_bstpool_free_node@file 'src/bintras_bst.c' line143> end
-<_bstpool_free_node@file 'src/bintras_bst.c' line126> begin
-<_bstpool_free_node@file 'src/bintras_bst.c' line143> end
-<_bstpool_free_node@file 'src/bintras_bst.c' line126> begin
-<_bstpool_free_node@file 'src/bintras_bst.c' line143> end
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line499> #5 destroy node links
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line508> #6 rebuild bst recursive
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line557> #4 delete[] dead_np_arr;
+<_bstpool_free_node@file 'src/bintras_bst.c' line133> begin
+<_bstpool_free_node@file 'src/bintras_bst.c' line150> end
+<_bstpool_free_node@file 'src/bintras_bst.c' line133> begin
+<_bstpool_free_node@file 'src/bintras_bst.c' line150> end
+<_bstpool_free_node@file 'src/bintras_bst.c' line133> begin
+<_bstpool_free_node@file 'src/bintras_bst.c' line150> end
+<_bstpool_free_node@file 'src/bintras_bst.c' line133> begin
+<_bstpool_free_node@file 'src/bintras_bst.c' line150> end
+<_bstpool_free_node@file 'src/bintras_bst.c' line133> begin
+<_bstpool_free_node@file 'src/bintras_bst.c' line150> end
+<_bstpool_free_node@file 'src/bintras_bst.c' line133> begin
+<_bstpool_free_node@file 'src/bintras_bst.c' line150> end
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line571> #5 destroy node links
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line580> #6 rebuild bst recursive
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 9
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 4
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 2
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 1
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 1
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 4
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 2
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 1
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 1
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line519> 0.ret
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line591> 0.ret
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(11,-1,8,13)
+(self,parent,left,right)=(13,11,6,10)
+(self,parent,left,right)=(6,13,9,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(11,-1,8,13)
+(self,parent,left,right)=(8,11,14,4)
+(self,parent,left,right)=(14,8,12,-1)
+(self,parent,left,right)=(12,14,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(11,-1,8,13)
+(self,parent,left,right)=(13,11,6,10)
+(self,parent,left,right)=(6,13,9,3)
+(self,parent,left,right)=(3,6,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line254> #3 new BSTNode()
-<bintras_bst_insert@file 'src/bintras_bst.c' line258> #4 _bstpool_get_node_pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line262> #5 check if !root
-<bintras_bst_insert@file 'src/bintras_bst.c' line270> #6 insert into parent.left or parent.right
-<bintras_bst_insert@file 'src/bintras_bst.c' line278> #7 link node.parent
-<bintras_bst_insert@file 'src/bintras_bst.c' line280> 0.ret
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
 
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_insert@file 'src/bintras_bst.c' line229> #0
-<bintras_bst_insert@file 'src/bintras_bst.c' line232> #1
-<bintras_bst_insert@file 'src/bintras_bst.c' line237> #2 search pos
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line442> #0
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line445> #1 BSTNode **live_np_arr = new BSTNode*[node_pool.count];
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line452> #2 dead_np_arr
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line457> #3 loop
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(11,-1,8,13)
+(self,parent,left,right)=(13,11,6,10)
+(self,parent,left,right)=(10,13,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(11,-1,8,13)
+(self,parent,left,right)=(8,11,14,4)
+(self,parent,left,right)=(4,8,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(11,-1,8,13)
+(self,parent,left,right)=(13,11,6,10)
+(self,parent,left,right)=(6,13,9,3)
+(self,parent,left,right)=(9,6,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(11,-1,8,13)
+(self,parent,left,right)=(13,11,6,10)
+(self,parent,left,right)=(6,13,9,3)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(11,-1,8,13)
+(self,parent,left,right)=(8,11,14,4)
+(self,parent,left,right)=(4,8,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line298> #3 new BSTNode()
+<bintras_bst_insert@file 'src/bintras_bst.c' line302> #4 _bstpool_get_node_pos
+<bintras_bst_insert@file 'src/bintras_bst.c' line309> #5 check if !root
+<bintras_bst_insert@file 'src/bintras_bst.c' line319> #6 insert
+<bintras_bst_insert@file 'src/bintras_bst.c' line332> 0.ret
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(11,-1,8,13)
+(self,parent,left,right)=(8,11,14,4)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(11,-1,8,13)
+(self,parent,left,right)=(13,11,6,10)
+(self,parent,left,right)=(6,13,9,3)
+(self,parent,left,right)=(9,6,7,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(11,-1,8,13)
+(self,parent,left,right)=(13,11,6,10)
+(self,parent,left,right)=(10,13,-1,5)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(11,-1,8,13)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(11,-1,8,13)
+(self,parent,left,right)=(8,11,14,4)
+(self,parent,left,right)=(14,8,12,-1)
+(self,parent,left,right)=(12,14,-1,2)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(11,-1,8,13)
+(self,parent,left,right)=(13,11,6,10)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_insert@file 'src/bintras_bst.c' line268> #0
+<bintras_bst_insert@file 'src/bintras_bst.c' line271> #1
+<bintras_bst_insert@file 'src/bintras_bst.c' line276> #2 search pos
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(11,-1,8,13)
+(self,parent,left,right)=(8,11,14,4)
+(self,parent,left,right)=(14,8,12,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line496> #0
+nodec 15
+it: 0
+it: 1
+it: 2
+it: 3
+it: 4
+it: 5
+it: 6
+it: 7
+it: 8
+it: 9
+it: 10
+it: 11
+it: 12
+it: 13
+it: 14
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line514> #1 BSTNode **live_np_arr = new BSTNode*[node_pool.count];
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line521> #2 dead_np_arr
+og_deadc: 0; og_livec: 15;
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line527> #3 loop
 it: 0
 is_alive: 0
 it: 1
@@ -699,256 +794,375 @@ it: 14
 is_alive: 14
 og_deadc: 0; og_livec: 15;
 deadc: 0; livec: 15;
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line486> #4 delete[] dead_np_arr;
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line499> #5 destroy node links
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line508> #6 rebuild bst recursive
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line557> #4 delete[] dead_np_arr;
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line571> #5 destroy node links
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line580> #6 rebuild bst recursive
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 15
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 7
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 3
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 1
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 1
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 3
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 1
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 1
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 7
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 3
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 1
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 1
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 3
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 1
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
 gap: 1
 
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line412> _bintras_build_bst_from_nodearr
-<bintras_bst_rebuild@file 'src/bintras_bst.c' line519> 0.ret
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line591> 0.ret
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(0,7,6,10)
 (self,parent,left,right)=(6,0,9,3)
 (self,parent,left,right)=(3,6,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(8,7,2,4)
 (self,parent,left,right)=(2,8,12,14)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(0,7,6,10)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(0,7,6,10)
 (self,parent,left,right)=(10,0,13,5)
 (self,parent,left,right)=(5,10,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(8,7,2,4)
 (self,parent,left,right)=(4,8,1,11)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(0,7,6,10)
 (self,parent,left,right)=(6,0,9,3)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(8,7,2,4)
 (self,parent,left,right)=(4,8,1,11)
 (self,parent,left,right)=(1,4,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(8,7,2,4)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(0,7,6,10)
 (self,parent,left,right)=(6,0,9,3)
 (self,parent,left,right)=(9,6,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(0,7,6,10)
 (self,parent,left,right)=(10,0,13,5)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(8,7,2,4)
 (self,parent,left,right)=(4,8,1,11)
 (self,parent,left,right)=(11,4,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(8,7,2,4)
 (self,parent,left,right)=(2,8,12,14)
 (self,parent,left,right)=(12,2,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(0,7,6,10)
 (self,parent,left,right)=(10,0,13,5)
 (self,parent,left,right)=(13,10,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_bst_search@file 'src/bintras_bst.c' line217> #0
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<bintras_bst_search@file 'src/bintras_bst.c' line256> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(8,7,2,4)
 (self,parent,left,right)=(2,8,12,14)
 (self,parent,left,right)=(14,2,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(8,7,2,4)
 (self,parent,left,right)=(2,8,12,14)
 (self,parent,left,right)=(14,2,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
-(self,parent,left,right)=(7,-1,8,0)
-(self,parent,left,right)=(0,7,6,10)
-(self,parent,left,right)=(10,0,13,5)
-(self,parent,left,right)=(5,10,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
-
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(0,7,6,10)
 (self,parent,left,right)=(10,0,13,5)
 (self,parent,left,right)=(5,10,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(0,7,6,10)
 (self,parent,left,right)=(10,0,13,5)
 (self,parent,left,right)=(5,10,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(0,7,6,10)
 (self,parent,left,right)=(10,0,13,5)
 (self,parent,left,right)=(5,10,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(0,7,6,10)
 (self,parent,left,right)=(10,0,13,5)
 (self,parent,left,right)=(5,10,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(0,7,6,10)
 (self,parent,left,right)=(10,0,13,5)
 (self,parent,left,right)=(5,10,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(0,7,6,10)
 (self,parent,left,right)=(10,0,13,5)
 (self,parent,left,right)=(5,10,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(0,7,6,10)
 (self,parent,left,right)=(10,0,13,5)
 (self,parent,left,right)=(5,10,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line185> #0
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
 (self,parent,left,right)=(7,-1,8,0)
 (self,parent,left,right)=(0,7,6,10)
 (self,parent,left,right)=(10,0,13,5)
 (self,parent,left,right)=(5,10,-1,-1)
-<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line208> 0.ret found
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
 
-<bintras_destroy_bst@file 'src/bintras_bst.c' line174> begin
-<_bstpool_fini@file 'src/bintras_bst.c' line69> begin
-<_bstpool_fini@file 'src/bintras_bst.c' line75> end
-<bintras_destroy_bst@file 'src/bintras_bst.c' line179> end
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line220> #0
+(self,parent,left,right)=(7,-1,8,0)
+(self,parent,left,right)=(0,7,6,10)
+(self,parent,left,right)=(10,0,13,5)
+(self,parent,left,right)=(5,10,-1,-1)
+<_bintras_bst_find_insert_pos@file 'src/bintras_bst.c' line247> 0.ret found
+
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line496> #0
+nodec 15
+it: 0
+it: 1
+it: 2
+it: 3
+it: 4
+it: 5
+it: 6
+it: 7
+it: 8
+it: 9
+it: 10
+it: 11
+it: 12
+it: 13
+it: 14
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line514> #1 BSTNode **live_np_arr = new BSTNode*[node_pool.count];
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line521> #2 dead_np_arr
+og_deadc: 0; og_livec: 15;
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line527> #3 loop
+it: 0
+is_alive: 0
+it: 1
+is_alive: 1
+it: 2
+is_alive: 2
+it: 3
+is_alive: 3
+it: 4
+is_alive: 4
+it: 5
+is_alive: 5
+it: 6
+is_alive: 6
+it: 7
+is_alive: 7
+it: 8
+is_alive: 8
+it: 9
+is_alive: 9
+it: 10
+is_alive: 10
+it: 11
+is_alive: 11
+it: 12
+is_alive: 12
+it: 13
+is_alive: 13
+it: 14
+is_alive: 14
+og_deadc: 0; og_livec: 15;
+deadc: 0; livec: 15;
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line557> #4 delete[] dead_np_arr;
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line571> #5 destroy node links
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line580> #6 rebuild bst recursive
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+gap: 15
+
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+gap: 7
+
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+gap: 3
+
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+gap: 1
+
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+gap: 1
+
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+gap: 3
+
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+gap: 1
+
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+gap: 1
+
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+gap: 7
+
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+gap: 3
+
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+gap: 1
+
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+gap: 1
+
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+gap: 3
+
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+gap: 1
+
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+gap: 1
+
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<_bintras_build_bst_from_nodearr_recursive@file 'src/bintras_bst.c' line467> _bintras_build_bst_from_nodearr
+<bintras_bst_rebuild@file 'src/bintras_bst.c' line591> 0.ret
+
+<bintras_destroy_bst@file 'src/bintras_bst.c' line185> begin
+<_bstpool_fini@file 'src/bintras_bst.c' line77> begin
+<_bstpool_fini@file 'src/bintras_bst.c' line83> end
+<bintras_destroy_bst@file 'src/bintras_bst.c' line190> end
