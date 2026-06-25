@@ -21,13 +21,14 @@ extern int bintras_bst_mark_dead(bintras_bst *bst_p, bintras_bst_node *node_p);
 extern int bintras_bst_node_is_valid(bintras_bst *bst_p, const bintras_bst_node *node_p);
 extern const bintras_bst_node *bintras_bst_insert(bintras_bst *bst_p, void *data);
 extern const bintras_bst_node *bintras_bst_search(bintras_bst *bst_p, void *data);
+
 extern const bintras_bst_node *
-bintras_bst_next_node(
+bintras_bst_iterator_next(
     const bintras_bst      *bst_p,
     const bintras_bst_node *node_p
 );
 extern const bintras_bst_node *
-bintras_bst_prev_node(
+bintras_bst_iterator_prev(
     const bintras_bst      *bst_p,
     const bintras_bst_node *node_p
 );

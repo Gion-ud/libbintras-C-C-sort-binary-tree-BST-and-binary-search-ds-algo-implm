@@ -354,8 +354,6 @@ _bintras_bst_next_node(
     bintras_bst_node   *node_p
 ) {
     (void)bst_p;
-    // if (node_p == bst_p->header_np->right_np) return bst_p->header_np;
-
     BSTNode *cur_np = node_p;
     // case (node.right != null)
     // goto right, then goto leftmost
@@ -385,7 +383,6 @@ _bintras_bst_prev_node(
     bintras_bst        *bst_p,
     bintras_bst_node   *node_p
 ) {
-    //if (node_p == bst_p->header_np->left_np) return bst_p->header_np;
     (void)bst_p;
     BSTNode *cur_np = node_p;
 
@@ -416,20 +413,22 @@ _bintras_bst_prev_node(
 #define _bintras_bst_rightmost(bst_p) (bst_p)->header_np->right_np
 
 const bintras_bst_node *
-bintras_bst_next_node(
+bintras_bst_iterator_next(
     const bintras_bst      *bst_p,
     const bintras_bst_node *node_p
 ) {
     if (!bst_p || !node_p) return NULL;
-    return _bintras_bst_next_node((bintras_bst*)bst_p, (bintras_bst_node*)node_p);
+    __auto_type np = _bintras_bst_next_node((bintras_bst*)bst_p, (bintras_bst_node*)node_p);
+    return (np) ? np : bst_p->header_np;
 }
 const bintras_bst_node *
-bintras_bst_prev_node(
+bintras_bst_iterator_prev(
     const bintras_bst      *bst_p,
     const bintras_bst_node *node_p
 ) {
     if (!bst_p || !node_p) return NULL;
-    return _bintras_bst_prev_node((bintras_bst*)bst_p, (bintras_bst_node*)node_p);
+    __auto_type np = _bintras_bst_prev_node((bintras_bst*)bst_p, (bintras_bst_node*)node_p);
+    return (np) ? np : bst_p->header_np;
 }
 const bintras_bst_node *bintras_bst_iterator_begin(bintras_bst *bst_p) {
     if (!bst_p) return NULL;
@@ -440,14 +439,12 @@ const bintras_bst_node *bintras_bst_iterator_rbegin(bintras_bst *bst_p) {
     return _bintras_bst_rightmost(bst_p);
 }
 const bintras_bst_node *bintras_bst_iterator_end(bintras_bst *bst_p) {
-    //if (!bst_p) return NULL;
     (void)bst_p;
-    return NULL;
-    //return bst_p->header_np;
+    return bst_p->header_np;
 }
 const bintras_bst_node *bintras_bst_iterator_rend(bintras_bst *bst_p) {
     (void)bst_p;
-    return NULL;
+    return bst_p->header_np;
 }
 
 static bintras_bst_node *
@@ -489,6 +486,7 @@ int bintras_bst_rebuild(bintras_bst *bst_p) {
     _dbg_log_msg("#0");
     if (!bst_p) return -1;
 
+    // This part is to check the integrity; to be removed
     if (!bst_p->dead_count) {
         _dbg_print("nodec %zu", bst_p->node_pool.count);
         size_t __ctr = 0ul;
@@ -521,7 +519,7 @@ int bintras_bst_rebuild(bintras_bst *bst_p) {
     size_t __ctr = 0ul;
     for (
     __auto_type
-        it = bst_p->header_np->left_np;
+        it = _bintras_bst_leftmost(bst_p);
         it != NULL;
         it = _bintras_bst_next_node(bst_p, it)
     ) {
@@ -536,8 +534,6 @@ int bintras_bst_rebuild(bintras_bst *bst_p) {
         assert(bst_p->state_arr[nidx] == BST_NODE_ALIVE);
         live_np_arr[live_np_arr_pos++] = it;
     }
-
-    _dbg_print("og_deadc: %zu; og_livec: %zu;", node_dead_cnt, node_live_cnt);
     _dbg_print("deadc: %zu; livec: %zu;", dead_np_arr_pos, live_np_arr_pos);
     assert(live_np_arr_pos == node_live_cnt);
     assert(dead_np_arr_pos == node_dead_cnt);

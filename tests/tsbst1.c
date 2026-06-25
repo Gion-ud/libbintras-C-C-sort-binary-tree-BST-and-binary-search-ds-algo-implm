@@ -72,7 +72,7 @@ int main() {
     __auto_type
         it = it_begin;
         it != it_end;
-        it = bintras_bst_next_node(bst_p, it)
+        it = bintras_bst_iterator_next(bst_p, it)
     ) {
         assert(it);
         cstr_kv_t *ent_p = (cstr_kv_t*)it->data;
@@ -89,7 +89,7 @@ int main() {
     __auto_type
         it = it_rbegin;
         it != it_rend;
-        it = bintras_bst_prev_node(bst_p, it)
+        it = bintras_bst_iterator_prev(bst_p, it)
     ) {
         assert(it);
         cstr_kv_t *ent_p = (cstr_kv_t*)it->data;
@@ -152,7 +152,7 @@ int main() {
     __auto_type
         it = it_begin;
         it != it_end;
-        it = bintras_bst_next_node(bst_p, it)
+        it = bintras_bst_iterator_next(bst_p, it)
     ) {
         //printf("ENTRY_STATE: %hd\n", ((_bintras_bst_implm*)bst_p)->state_arr[i]);
         if (!bintras_bst_node_is_valid(bst_p, it)) {
@@ -170,7 +170,7 @@ int main() {
     __auto_type
         it = it_begin;
         it != it_end;
-        it = bintras_bst_next_node(bst_p, it)
+        it = bintras_bst_iterator_next(bst_p, it)
     ) {
         assert(it);
         cstr_kv_t *ent_p = (cstr_kv_t*)it->data;
@@ -195,7 +195,7 @@ int main() {
     __auto_type
         it = it_begin;
         it != it_end;
-        it = bintras_bst_next_node(bst_p, it)
+        it = bintras_bst_iterator_next(bst_p, it)
     ) {
         assert(it);
         cstr_kv_t *ent_p = (cstr_kv_t*)it->data;
@@ -221,7 +221,7 @@ int main() {
     __auto_type
         it = bintras_bst_lower_bound(bst_p, &cstr);
         it != bintras_bst_iterator_end(bst_p);
-        it = bintras_bst_next_node(bst_p, it)
+        it = bintras_bst_iterator_next(bst_p, it)
     ) {
         assert(it);
         cstr_kv_t *ent_p = (cstr_kv_t*)it->data;
@@ -236,7 +236,7 @@ int main() {
     __auto_type
         it = bintras_bst_lower_bound(bst_p, &lcstr);
         it != bintras_bst_upper_bound(bst_p, &rcstr);
-        it = bintras_bst_next_node(bst_p, it)
+        it = bintras_bst_iterator_next(bst_p, it)
     ) {
         assert(it);
         cstr_kv_t *ent_p = (cstr_kv_t*)it->data;
@@ -249,7 +249,7 @@ int main() {
     it_begin = bintras_bst_iterator_begin(bst_p);
     it_end = bintras_bst_iterator_end(bst_p);
     for (
-        __auto_type it = it_begin; it != it_end; it = bintras_bst_next_node(bst_p, it)
+        __auto_type it = it_begin; it != it_end; it = bintras_bst_iterator_next(bst_p, it)
     ) {
         //printf("ENTRY_STATE: %hd\n", ((_bintras_bst_implm*)bst_p)->state_arr[i]);
         if (!bintras_bst_node_is_valid(bst_p, it)) {
@@ -275,7 +275,7 @@ int main() {
     __auto_type
         it = bintras_min_node(bst_p);
         it != NULL;
-        it = bintras_bst_next_node(bst_p, it)
+        it = bintras_bst_iterator_next(bst_p, it)
     ) {
         assert(it);
         int val = *(int*)it->data;
