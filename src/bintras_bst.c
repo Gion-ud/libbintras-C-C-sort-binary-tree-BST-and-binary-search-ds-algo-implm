@@ -412,15 +412,8 @@ _bintras_bst_prev_node(
     return cur_np;
 }
 
-static bintras_bst_node *
-_bintras_bst_leftmost(bintras_bst *bst_p) {
-    return bst_p->header_np->left_np;
-}
-
-static bintras_bst_node *
-_bintras_bst_rightmost(bintras_bst *bst_p) {
-    return bst_p->header_np->right_np;
-}
+#define _bintras_bst_leftmost(bst_p) (bst_p)->header_np->left_np
+#define _bintras_bst_rightmost(bst_p) (bst_p)->header_np->right_np
 
 const bintras_bst_node *
 bintras_bst_next_node(
