@@ -39,8 +39,8 @@ int main() {
     for (
     __auto_type
         it = bintras_min_node(bst_p);
-        it != NULL;
-        it = bintras_bst_next_node(bst_p, it)
+        it != bintras_bst_iterator_end(bst_p);
+        it = bintras_bst_iterator_next(bst_p, it)
     ) {
         assert(it);
         printf("%d\n", *(int*)it->data);
@@ -50,8 +50,8 @@ int main() {
     for (
     __auto_type
         it = bintras_max_node(bst_p);
-        it != NULL;
-        it = bintras_bst_prev_node(bst_p, it)
+        it != bintras_bst_iterator_rend(bst_p);
+        it = bintras_bst_iterator_prev(bst_p, it)
     ) {
         assert(it);
         printf("%d\n", *(int*)it->data);
@@ -70,8 +70,8 @@ int main() {
     for (
     __auto_type
         it = bintras_min_node(bst_p);
-        it != NULL;
-        it = bintras_bst_next_node(bst_p, it)
+        it != bintras_bst_iterator_end(bst_p);
+        it = bintras_bst_iterator_next(bst_p, it)
     ) {
         assert(it);
         printf("%d\n", *(int*)it->data);
@@ -81,8 +81,8 @@ int main() {
     for (
     __auto_type
         it = bintras_max_node(bst_p);
-        it != NULL;
-        it = bintras_bst_prev_node(bst_p, it)
+        it != bintras_bst_iterator_rend(bst_p);
+        it = bintras_bst_iterator_prev(bst_p, it)
     ) {
         assert(it);
         printf("%d\n", *(int*)it->data);
@@ -96,7 +96,7 @@ int main() {
     __auto_type
         it = bintras_bst_lower_bound(bst_p, &l);
         it != bintras_bst_lower_bound(bst_p, &r);
-        it = bintras_bst_next_node(bst_p, it)
+        it = bintras_bst_iterator_next(bst_p, it)
     ) {
         assert(it);
         printf("%d\n", *(int*)it->data);
@@ -109,7 +109,7 @@ int main() {
     __auto_type
         it = bintras_bst_lower_bound(bst_p, &l);
         it != bintras_bst_upper_bound(bst_p, &r);
-        it = bintras_bst_next_node(bst_p, it)
+        it = bintras_bst_iterator_next(bst_p, it)
     ) {
         bintras_bst_mark_dead(bst_p, (bintras_bst_node*)it);
     }
@@ -118,8 +118,8 @@ int main() {
     for (
     __auto_type
         it = bintras_min_node(bst_p);
-        it != NULL;
-        it = bintras_bst_next_node(bst_p, it)
+        it != bintras_bst_iterator_end(bst_p);
+        it = bintras_bst_iterator_next(bst_p, it)
     ) {
         assert(it);
         if (!bintras_bst_node_is_valid(bst_p, it))
@@ -134,8 +134,8 @@ int main() {
     for (
     __auto_type
         it = bintras_min_node(bst_p);
-        it != NULL;
-        it = bintras_bst_next_node(bst_p, it)
+        it != bintras_bst_iterator_end(bst_p);
+        it = bintras_bst_iterator_next(bst_p, it)
     ) {
         printf("%d\n", *(int*)it->data);
     }
@@ -143,8 +143,8 @@ int main() {
     for (
     __auto_type
         it = bintras_max_node(bst_p);
-        it != NULL;
-        it = bintras_bst_prev_node(bst_p, it)
+        it != bintras_bst_iterator_rend(bst_p);
+        it = bintras_bst_iterator_prev(bst_p, it)
     ) {
         assert(it);
         printf("%d\n", *(int*)it->data);
@@ -163,8 +163,8 @@ int main() {
     for (
     __auto_type
         it = bintras_min_node(bst_p);
-        it != NULL;
-        it = bintras_bst_next_node(bst_p, it)
+        it != bintras_bst_iterator_end(bst_p);
+        it = bintras_bst_iterator_next(bst_p, it)
     ) {
         printf("%d\n", *(int*)it->data);
     }
@@ -172,8 +172,8 @@ int main() {
     for (
     __auto_type
         it = bintras_max_node(bst_p);
-        it != NULL;
-        it = bintras_bst_prev_node(bst_p, it)
+        it != bintras_bst_iterator_rend(bst_p);
+        it = bintras_bst_iterator_prev(bst_p, it)
     ) {
         assert(it);
         printf("%d\n", *(int*)it->data);
