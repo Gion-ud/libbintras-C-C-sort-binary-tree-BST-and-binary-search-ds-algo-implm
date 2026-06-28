@@ -1,16 +1,29 @@
+/*
+ * bintras_sort.c
+ * 
+ * Copyright (c) 2026 John Wood
+ * All rights reserved.
+ * 
+ * This file contains the implementation of introsort
+ * (made with insertion sort, quicksort and heapsort)
+ * for my project libbintras
+ * namespace: bintras_
+ * 
+ *
+ */
+
 // compile with: -std=c23
 #include <assert.h>
-#include <malloc.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stddef.h>
 #include "dbg_print.h"
 #include <bintras_sort.h>
-
-// namespace: bintras_
+#include <stdalign.h>
 
 typedef unsigned char byte_t;
 #define INLINED static inline __attribute__((unused))
+#define INTRNL static __attribute__((unused))
 
 
 typedef struct untyped_array_range {
@@ -70,6 +83,15 @@ INLINED void *_ptr_iter_sub(
     return
         (byte_t*)base - count * elem_size;
 }
+INLINED void *_ptr_iter_step(
+    void       *base,
+    ptrdiff_t   idx,
+    size_t      elem_size
+) {
+    return
+        (byte_t*)base + idx * elem_size;
+}
+#define _ptr_iter_at(base, idx, elem_size) _ptr_iter_step(base, idx, elem_size)
 
 INLINED void _bintras_memswap(
     void   *elem1_p,
@@ -87,6 +109,44 @@ INLINED void _bintras_memswap(
     }
 }
 
+INTRNL void _bintras_insertion_sort(
+    byte_t     *_arr_begin,             /* arr.begin() */
+    byte_t     *_arr_end,               /* arr.end() */
+    byte_t     *_key_buf,               /* &key; user_provided mem */
+    size_t      elem_size,              /* sizeof(arr[0]) */
+    int       (*cmp)(void *, void *)    /* cmp(&elem1, &elem2) callback */
+) {
+    ptrdiff_t arr_len = _ptr_iter_diff(_arr_end, _arr_begin, elem_size);
+    for (ptrdiff_t i = 1; i < arr_len; ++i) {
+        memcpy(
+            _key_buf,
+            _ptr_iter_add(_arr_begin, i, elem_size),
+            elem_size
+        );
+        ptrdiff_t j = i;
+        while (
+            j > 0 &&
+            cmp(
+                _ptr_iter_add(_arr_begin, j - 1, elem_size),
+                _key_buf
+            ) > 0
+        ) {
+            memcpy(
+                _ptr_iter_add(_arr_begin, j, elem_size),
+                _ptr_iter_add(_arr_begin, j - 1, elem_size),
+                elem_size
+            );
+            --j;
+        }
+        memcpy(
+            _ptr_iter_add(_arr_begin, j, elem_size),
+            _key_buf,
+            elem_size
+        );
+    }
+}
+
+
 INLINED void *_bintras_lomuto_partition(
     byte_t     *_arr_begin,             /* arr.begin() */
     byte_t     *_arr_end,               /* arr.end() */
@@ -94,7 +154,6 @@ INLINED void *_bintras_lomuto_partition(
     size_t      elem_size,              /* sizeof(arr[0]) */
     int       (*cmp)(void *, void *)    /* cmp(&elem1, &elem2) callback */
 ) {
-    _dbg_log_msg("#0");
     memcpy(
         _pivot_buf,
         _ptr_iter_prev(_arr_end, elem_size),
@@ -103,7 +162,6 @@ INLINED void *_bintras_lomuto_partition(
     /* pivot = *(arr.end() - 1) */
     __auto_type _pivot_pos_p = _arr_begin;  /* pivot_pos_p = arr.begin() */
 
-    _dbg_log_msg("#1");
     for (
         __auto_type it = _arr_begin;                /* it = arr.begin() */
         it != _ptr_iter_prev(_arr_end, elem_size);  /* it != arr.end() */
@@ -115,7 +173,6 @@ INLINED void *_bintras_lomuto_partition(
         }
     }
 
-    _dbg_log_msg("#2");
     _bintras_memswap(
         _pivot_pos_p,
         _ptr_iter_prev(_arr_end, elem_size),
@@ -124,6 +181,13 @@ INLINED void *_bintras_lomuto_partition(
     return (_pivot_pos_p == _arr_begin)
         ? _ptr_iter_next(_pivot_pos_p, elem_size)
         : _pivot_pos_p;
+    /*
+        The checking: we don't want to return
+        the same element if there are duplicates because
+        the partition must return a mid that works with
+        range iter such that [begin, mid) and [mid, end)
+        works fine
+    */
 }
 
 INLINED void *_bintras_hoare_partition(
@@ -167,8 +231,7 @@ INLINED void *_bintras_hoare_partition(
     }
 }
 
-
-#define _bintras_partition _bintras_hoare_partition
+#define _bintras_partition _bintras_lomuto_partition
 
 typedef struct _raw_range {
     void       *_begin;
@@ -192,23 +255,24 @@ INLINED int _range_stack_push(
     ++stack_p->size;
     return 0;
 }
-INLINED int _range_stack_pop(
-    _range_stack   *stack_p
-) {
+INLINED int _range_stack_pop(_range_stack *stack_p) {
     if (!stack_p->size) return -1;
     --stack_p->size;
     return 0;
 }
-INLINED _raw_range *_range_stack_top(
-    _range_stack   *stack_p
-) {
+INLINED _raw_range *_range_stack_top(_range_stack *stack_p) {
     return
         (!stack_p->size) ? NULL :
         &stack_p->range_arr[stack_p->size - 1];
 }
+INLINED void _range_stack_reset(_range_stack *stack_p) {
+    stack_p->size = 0ul;
+}
 
-#define _RANGE_STACK_DEPTH_MAX 32u
-#define _ELEM_SIZE_MAX 32u
+
+#define _RANGE_STACK_DEPTH_MAX      64u
+#define _INSERTION_SORT_THRESHOLD   16u  
+#define _ELEM_SIZE_MAX              64u
 
 static int _bintras_quicksort(
     byte_t     *_arr_begin,             /* arr.begin() */
@@ -217,16 +281,27 @@ static int _bintras_quicksort(
     int       (*cmp)(void *, void *)    /* cmp(&elem1, &elem2) callback */
 ) {
     _dbg_log_msg("#0");
-    __auto_type arr_diff = _ptr_iter_diff(
-        _arr_end,
-        _arr_begin,
-        elem_size
-    );
-    if (arr_diff <= 1) goto failed_ret;
-    assert(arr_diff > 0);
+    ptrdiff_t arr_len = _ptr_iter_diff(_arr_end, _arr_begin, elem_size);
+    if (arr_len <= 1) goto failed_ret;
+    assert(arr_len > 0);
+
+    alignas(max_align_t)
+    byte_t _tmp_elem_buf[_ELEM_SIZE_MAX];
 
     _dbg_log_msg("#1");
-    _dbg_print("arr_len:%td", arr_diff);
+    if (arr_len <= _INSERTION_SORT_THRESHOLD) {
+        _bintras_insertion_sort(
+            _arr_begin,
+            _arr_end,
+            _tmp_elem_buf,
+            elem_size,
+            cmp
+        );
+        return 0;
+    }
+
+    _dbg_log_msg("#1");
+    _dbg_print("arr_len:%td", arr_len);
     _raw_range range_arr[_RANGE_STACK_DEPTH_MAX];
     memset(range_arr, 0, _RANGE_STACK_DEPTH_MAX * sizeof(*range_arr));
 
@@ -238,48 +313,61 @@ static int _bintras_quicksort(
 
     _dbg_log_msg("#2");
     _raw_range top_range = { _arr_begin, _arr_end };
-    int rc = _range_stack_push(&stack, &top_range);
-    assert(rc != -1);
-    
-    byte_t _pivot_elem_buf[_ELEM_SIZE_MAX];
+    _range_stack_push(&stack, &top_range);    
 
     _dbg_log_msg("#3 loop");
-    size_t __it_ctr = 0ul;
+    //size_t __it_ctr = 0ul;
     while (stack.size) {
-        _dbg_print("stack_size: %zu; __ctr: %zu", stack.size, __it_ctr++);
-        __auto_type top_p = _range_stack_top(&stack);
-        assert(top_p);
-        /* stack.top() */
-        top_range._begin   = top_p->_begin;
-        top_range._end     = top_p->_end;
-        _range_stack_pop(&stack);
+        //_dbg_print("stack_size: %zu; __ctr: %zu", stack.size, __it_ctr++);
+        _raw_range *top_range_p = _range_stack_top(&stack);   /* stack.top() */
+        assert(top_range_p);
+        top_range._begin   = top_range_p->_begin;
+        top_range._end     = top_range_p->_end;
+        _range_stack_pop(&stack); /* stack.pop() */
 
-        if (
-            _ptr_iter_diff(
-                top_range._end,
+        ptrdiff_t top_range_len =
+            _ptr_iter_diff(top_range._end, top_range._begin, elem_size);
+        _dbg_print("range_len: %td", top_range_len);
+        if (top_range_len <= 1) continue;
+        if (top_range_len <= _INSERTION_SORT_THRESHOLD) {
+            _dbg_log_msg("using insertion sort");
+            _bintras_insertion_sort(
                 top_range._begin,
-                elem_size
-            ) <= 1
-        ) continue;
-        _dbg_log_msg("#3a loop");
+                top_range._end,
+                _tmp_elem_buf,
+                elem_size,
+                cmp
+            );
+            continue;
+        }
 
+        _dbg_log_msg("using quicksort");
         /* top_range.length() = top_range.end() - top_range.begin() */
-
-        __auto_type _split = _bintras_partition(
+        void *_split = _bintras_partition(
             top_range._begin,
             top_range._end,
-            _pivot_elem_buf,
+            _tmp_elem_buf,
             elem_size,
             cmp
         );
-        _dbg_log_msg("#3b loop");
 
         _raw_range lrange = { top_range._begin, _split };
         _raw_range rrange = { _split, top_range._end };
 
-        if (stack.size + 2 > stack.capacity) goto failed_ret;
-        _range_stack_push(&stack, &lrange);
-        _range_stack_push(&stack, &rrange);
+        if (stack.size + 2 > stack.capacity) {
+            // switch to heapsort; to be implemented
+            goto failed_ret;
+        }
+        if (
+            _ptr_iter_diff(lrange._end, lrange._begin, elem_size) < 
+            _ptr_iter_diff(rrange._end, rrange._begin, elem_size)
+        ) {
+            _range_stack_push(&stack, &lrange);
+            _range_stack_push(&stack, &rrange);
+        } else {
+            _range_stack_push(&stack, &rrange);
+            _range_stack_push(&stack, &lrange);
+        }
     }
     _dbg_log_msg("#5");
     assert(!stack.size);
@@ -290,6 +378,7 @@ failed_ret:
     return -1;
 }
 
+// public
 int bintras_quicksort(
     void   *_arr_begin,
     void   *_arr_end,

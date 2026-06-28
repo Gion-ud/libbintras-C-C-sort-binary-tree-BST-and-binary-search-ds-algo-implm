@@ -8,7 +8,7 @@ all: bintras_sort.o tsqs
 
 
 CFLAGS = \
-	-O2 -Wall -Wextra -fno-strict-aliasing -fno-exceptions -D_DEBUG -g # -fsanitize=address
+	-O2 -Wall -Wextra -fno-strict-aliasing -fno-exceptions# -D_DEBUG -g # -fsanitize=address
 #	-O0
 #	-Wno-maybe-uninitialized \
 #	-Wno-unused-function
