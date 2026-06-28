@@ -12,6 +12,7 @@
    "-Wextra",
    "-fno-strict-aliasing",
    "-fno-exceptions",
+   "-std=c23",
    "-D_DEBUG",
    "-g",
    "-Iinclude",
@@ -32,6 +33,7 @@
    "-Wextra",
    "-fno-strict-aliasing",
    "-fno-exceptions",
+   "-std=c23",
    "-D_DEBUG",
    "-g",
    "-Iinclude",
@@ -52,6 +54,7 @@
    "-Wextra",
    "-fno-strict-aliasing",
    "-fno-exceptions",
+   "-std=c23",
    "-D_DEBUG",
    "-g",
    "-Iinclude",
@@ -95,6 +98,7 @@
    "-Wextra",
    "-fno-strict-aliasing",
    "-fno-exceptions",
+   "-std=c23",
    "-D_DEBUG",
    "-g",
    "-Iinclude",
@@ -116,11 +120,34 @@
    "-Wextra",
    "-fno-strict-aliasing",
    "-fno-exceptions",
+   "-std=c23",
    "-D_DEBUG",
    "-g",
    "-Iinclude",
    "-Isrc"
   ],
   "file": "tests/tsbst.c"
+ },
+ {
+  "directory": "C:\\John_Wood\\Coding_Projects\\c\\sort_proj",
+  "arguments": [
+   "cc",
+   "-c",
+   "src/bintras_sort.c",
+   "-o",
+   "build/bintras_sort.o",
+   "-O2",
+   "-Wall",
+   "-Wextra",
+   "-fno-strict-aliasing",
+   "-fno-exceptions",
+   "-std=c23",
+   "-D_DEBUG",
+   "-g",
+   "-Iinclude",
+   "-Isrc",
+   "-std=c23"
+  ],
+  "file": "src/bintras_sort.c"
  }
 ]

@@ -216,7 +216,7 @@ int main() {
     puts("");
 
     puts("12. get all kv");
-    cstr = "freedom";
+    cstr = "mmap";
     for (
     __auto_type
         it = bintras_bst_lower_bound(bst_p, &cstr);
@@ -231,7 +231,7 @@ int main() {
 
     puts("13. upper/lower");
     char *lcstr = "mmap";
-    char *rcstr = "w";
+    char *rcstr = "munmap";
     for (
     __auto_type
         it = bintras_bst_lower_bound(bst_p, &lcstr);
@@ -246,8 +246,8 @@ int main() {
     puts("");
 
     puts("13. upper/lower");
-    lcstr = "f";
-    rcstr = "n";
+    lcstr = "fsync";
+    rcstr = "realloc";
     for (
     __auto_type
         it = bintras_bst_lower_bound(bst_p, &lcstr);

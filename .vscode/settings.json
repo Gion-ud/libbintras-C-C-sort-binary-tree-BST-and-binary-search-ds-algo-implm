@@ -1,5 +1,5 @@
 {
-	    "clangd.arguments": [
-		            "--query-driver=C:/John_Wood/DevTools/w64devkit/bin/*"
-			        ]
+	"clangd.arguments": [
+		"--query-driver=C:/John_Wood/DevTools/w64devkit/bin/*",
+	]
 }

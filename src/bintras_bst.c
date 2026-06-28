@@ -588,26 +588,21 @@ failed_ret:
 
 const bintras_bst_node *
 bintras_bst_lower_bound(bintras_bst *bst_p, void *data) {
-    if (!bst_p || !data) goto failed_ret;
-    int target_exists = 0;
-    __auto_type np = (BSTNode*)_bintras_bst_find_insert_pos(bst_p, data, &target_exists);
+    if (!bst_p || !data) return NULL;
+    int __target_exists; // disgarded
+    __auto_type np = (BSTNode*)_bintras_bst_find_insert_pos(bst_p, data, &__target_exists);
     return (np) ? np : bst_p->header_np;
-failed_ret:
-    _dbg_log_msg("-1.ret\n");
-    return NULL;
 }
 
 const bintras_bst_node *
 bintras_bst_upper_bound(bintras_bst *bst_p, void *data) {
-    if (!bst_p || !data) goto failed_ret;
-    int target_exists = 0;
-    __auto_type np = (BSTNode*)_bintras_bst_find_insert_pos(bst_p, data, &target_exists);
+    if (!bst_p || !data) return NULL;
+    int __target_exists;
+    __auto_type np = (BSTNode*)_bintras_bst_find_insert_pos(bst_p, data, &__target_exists);
     if (!np) return bst_p->header_np;
 
     int cmp_ret = bst_p->cmp_func(np->data, data);
     return (cmp_ret > 0)
         ? np : _bintras_bst_next_node(bst_p, np);
-failed_ret:
-    return NULL;
 }
 
