@@ -1,0 +1,10 @@
+<bintras_quicksort@file 'src/bintras_sort.c' line290> 
+<bintras_quicksort@file 'src/bintras_sort.c' line295> 
+<_bintras_quicksort@file 'src/bintras_sort.c' line212> #0
+<_bintras_quicksort@file 'src/bintras_sort.c' line221> #1
+arr_len:15
+<_bintras_quicksort@file 'src/bintras_sort.c' line232> #2
+<_bintras_quicksort@file 'src/bintras_sort.c' line239> #3 loop
+stack_size: 1; __ctr: 0
+<_bintras_quicksort@file 'src/bintras_sort.c' line257> #3a loop
+<_bintras_hoare_partition@file 'src/bintras_sort.c' line133> #0
